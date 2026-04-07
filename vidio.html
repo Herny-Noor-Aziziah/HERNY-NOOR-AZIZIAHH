@@ -3,121 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeri Foto Modern</title>
+    <title>Bagian Video Responsif</title>
     <style>
-        /* --- CSS BAGIAN FOTO --- */
+        /* --- CSS BAGIAN VIDEO --- */
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #1a1a1a; /* Latar belakang gelap agar video menonjol */
+            color: #fff;
             margin: 0;
-            padding: 20px;
-            background-color: #f8f9fa;
+            padding: 40px 20px;
         }
 
-        .gallery-container {
-            max-width: 1100px;
+        .video-section {
+            max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .gallery-title {
             text-align: center;
-            margin-bottom: 30px;
-            color: #333;
         }
 
-        /* Grid Layout */
-        .photo-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 15px;
+        .video-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #f1c40f; /* Warna aksen kuning emas */
         }
 
-        /* Styling Tiap Item Foto */
-        .photo-item {
+        .video-header p {
+            font-size: 1.1rem;
+            color: #ccc;
+            margin-bottom: 40px;
+        }
+
+        /* Container untuk menjaga rasio video (16:9) */
+        .video-wrapper {
             position: relative;
+            padding-bottom: 56.25%; /* Rasio 16:9 */
+            height: 0;
             overflow: hidden;
-            border-radius: 10px;
-            height: 250px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            background: #000;
         }
 
-        .photo-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Menjaga proporsi foto agar tidak gepeng */
-            transition: transform 0.5s ease;
-        }
-
-        /* Efek Zoom saat Hover */
-        .photo-item:hover img {
-            transform: scale(1.1);
-        }
-
-        /* Overlay Teks saat Hover */
-        .photo-overlay {
+        .video-wrapper iframe, 
+        .video-wrapper video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            font-weight: bold;
+            border: none;
         }
 
-        .photo-item:hover .photo-overlay {
-            opacity: 1;
+        .video-description {
+            margin-top: 25px;
+            background: #2d2d2d;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            border-left: 5px solid #f1c40f;
         }
 
-        /* Responsif untuk HP */
+        /* Responsive Mobile */
         @media (max-width: 600px) {
-            .photo-grid {
-                grid-template-columns: 1fr;
+            .video-header h2 {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="gallery-container">
-        <h2 class="gallery-title">Koleksi Foto</h2>
-
-        <div class="photo-grid">
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=1" alt="Pemandangan 1">
-                <div class="photo-overlay">Lihat Detail</div>
-            </div>
-
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=2" alt="Pemandangan 2">
-                <div class="photo-overlay">Lihat Detail</div>
-            </div>
-
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=3" alt="Pemandangan 3">
-                <div class="photo-overlay">Lihat Detail</div>
-            </div>
-
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=4" alt="Pemandangan 4">
-                <div class="photo-overlay">Lihat Detail</div>
-            </div>
-
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=5" alt="Pemandangan 5">
-                <div class="photo-overlay">Lihat Detail</div>
-            </div>
-
-            <div class="photo-item">
-                <img src="https://picsum.photos/600/400?random=6" alt="Pemandangan 6">
-                <div class="photo-overlay">Lihat Detail</div>
-            </div>
+    <section class="video-section">
+        <div class="video-header">
+            <h2>Video Unggulan</h2>
+            <p>Tonton momen terbaik kami dalam kualitas tinggi.</p>
         </div>
-    </div>
+
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="YouTube video player" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+
+            </div>
+
+        <div class="video-description">
+            <h3>Tentang Video Ini</h3>
+            <p>
+                Video di atas menunjukkan bagaimana integrasi elemen visual dapat meningkatkan pengalaman pengguna. 
+                Dengan menggunakan teknik <strong>responsive embed</strong>, video ini akan terlihat sempurna baik di layar laptop lebar maupun di layar ponsel yang kecil.
+            </p>
+        </div>
+    </section>
 
 </body>
 </html>
