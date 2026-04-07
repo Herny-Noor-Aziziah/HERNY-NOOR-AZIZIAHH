@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Foto Modern</title>
+    <style>
+        /* --- CSS BAGIAN FOTO --- */
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .gallery-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        /* Grid Layout */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+        }
+
+        /* Styling Tiap Item Foto */
+        .photo-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 250px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Menjaga proporsi foto agar tidak gepeng */
+            transition: transform 0.5s ease;
+        }
+
+        /* Efek Zoom saat Hover */
+        .photo-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Overlay Teks saat Hover */
+        .photo-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: bold;
+        }
+
+        .photo-item:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        /* Responsif untuk HP */
+        @media (max-width: 600px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="gallery-container">
+        <h2 class="gallery-title">Koleksi Foto</h2>
+
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="https://picsum.photos/600/400?random=1" alt="Pemandangan 1">
+                <div class="photo-overlay">Lihat Detail</div>
+            </div>
+
+            <div class="photo-item">
+                <img src="https://picsum.photos/600/400?random=2" alt="Pemandangan 2">
+                <div class="photo-overlay">Lihat Detail</div>
+            </div>
+
+            <div class="photo-item">
+                <img src="https://picsum.photos/600/400?random=3" alt="Pemandangan 3">
+                <div class="photo-overlay">Lihat Detail</div>
+            </div>
+
+            <div class="photo-item">
+                <img src="https://picsum.photos/600/400?random=4" alt="Pemandangan 4">
+                <div class="photo-overlay">Lihat Detail</div>
+            </div>
+
+            <div class="photo-item">
+                <img src="https://picsum.photos/600/400?random=5" alt="Pemandangan 5">
+                <div class="photo-overlay">Lihat Detail</div>
+            </div>
+
+            <div class="photo-item">
+                <img src="https://picsum.photos/600/400?random=6" alt="Pemandangan 6">
+                <div class="photo-overlay">Lihat Detail</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
